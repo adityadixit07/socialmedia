@@ -21,6 +21,8 @@ dbConnect();
 
 // using routes
 // for post
+
+  
 app.use("/api/v1", postRouter);
 // for user
 app.use("/api/v1", userRouter);
@@ -28,3 +30,7 @@ app.use("/api/v1", userRouter);
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
 });
+app.get('/',(req,res)=>{
+  res.send(`Aditya Media Server is live now......You can access it freely!`)
+}
+)
