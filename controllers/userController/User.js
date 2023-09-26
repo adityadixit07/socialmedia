@@ -81,8 +81,9 @@ export const login = async (req, res) => {
       .cookie("token", token, {
         expiresIn: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
         httpOnly: true,
-        secure: true,
+        secure: false,
         sameSite: "none",
+        // secure false ka matlab hai ki humara cookie http ke through bhi send ho jayega
       })
       .json({
         success: true,
